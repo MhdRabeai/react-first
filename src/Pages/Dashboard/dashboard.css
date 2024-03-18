@@ -1,0 +1,78 @@
+.dash-parent {
+  display: flex;
+}
+.dash-parent .dash-child {
+  width: 80%;
+}
+.side-bar {
+  padding: 20px;
+  height: 100vh;
+  width: 20%;
+  border-right: 1px solid #ddd;
+  display: block;
+}
+.side-bar .item-link {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+}
+.side-bar .item-link:hover,
+.side-bar .item-link.active {
+  background-color: #74afb9;
+  color: #fff;
+}
+.users-table {
+  padding: 20px;
+  /* width: 80%; */
+}
+.users-table table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.users-table tr:nth-child(even) {
+  background-color: #f1f7f8;
+}
+.users-table :where(th, td) {
+  border: 1px solid #a0c8cf;
+  padding: 0.75rem;
+  text-align: center;
+}
+.users-table th {
+  background-color: #74afb9;
+  color: #fff;
+}
+.users-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.users-table .icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+.users-table .icons i {
+  cursor: pointer;
+  font-size: 18px;
+}
+.users-table .icons .square {
+  color: green !important;
+}
+.users-table .icons i:last-of-type {
+  color: red;
+}
