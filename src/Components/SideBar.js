@@ -11,6 +11,14 @@ export default function SideBar() {
         <i className="fa-solid fa-user-plus"></i>
         New User
       </NavLink>
+      <NavLink to="/dashboard/products" className="item-link">
+        <i className=" fa-brands fa-product-hunt"></i>
+        Products
+      </NavLink>
+      <NavLink to="/dashboard/product/create" className="item-link">
+        <i className="fa-solid fa-plus"></i>
+        New Product
+      </NavLink>
     </div>
   );
 }
