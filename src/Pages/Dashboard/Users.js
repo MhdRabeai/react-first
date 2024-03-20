@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { User } from "../WebSite/Context/userContext";
+import { User } from "../Context/userContext";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [update, setUpdate] = useState(1);
+  
   const context = useContext(User);
   const token = context.auth.token;
   

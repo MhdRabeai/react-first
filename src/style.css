@@ -58,6 +58,10 @@ header a:hover {
   width: 400px;
   position: relative;
 }
+.create form {
+ 
+  width: 100%;
+}
 .parent .input {
   display: flex;
   flex-direction: column;

@@ -6,9 +6,9 @@ import Dashboard from "./Pages/Dashboard/Dashbord";
 import Users from "./Pages/Dashboard/Users";
 import UpdateUser from "./Pages/Dashboard/Users/UpdateUser";
 import CreateUser from "./Pages/Dashboard/Users/CreateUser";
-import Login from "./Pages/WebSite/Auth/Login";
 import RequireAuth from "./Pages/WebSite/Auth/RequireAuth";
 import PersistLogin from "./Pages/WebSite/Auth/PersistLogin";
+import Login from "./Pages/WebSite/Auth/Login";
 
 export default function App() {
   return (

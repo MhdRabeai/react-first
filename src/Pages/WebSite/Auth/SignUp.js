@@ -1,9 +1,11 @@
-import { useContext } from "react";
-import { useState } from "react";
-import { User } from "./../Context/userContext";
+import { useContext,useState } from "react";
+
+
 import axios from "axios";
 import Header from "./../../../Components/Header";
 import { useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import { User } from './../../Context/userContext';
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -13,7 +15,8 @@ export default function SignUp() {
   const [emailError, setEmailError] = useState(false);
   const [accept, setAccept] = useState(false);
   const nav = useNavigate();
-
+ // Cookie
+ const cookie = new Cookies();
   var userNow = useContext(User);
   console.log(userNow);
   async function submit(e) {
@@ -27,6 +30,9 @@ export default function SignUp() {
         password_confirmation: passwordR,
       });
       const token = ress.data.data.token;
+      
+      // Sava At Cookie when he signed in
+      cookie.set("Bearer",token);
       const userDetails = ress.data.data.user;
 
       userNow.setAuth({

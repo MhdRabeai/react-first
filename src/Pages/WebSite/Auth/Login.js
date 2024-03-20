@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { useState } from "react";
-import { User } from "./../Context/userContext";
+import { User } from "./../../Context/userContext";
 import axios from "axios";
 import Header from "./../../../Components/Header";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,8 +14,11 @@ export default function Login() {
   const [accept, setAccept] = useState(false);
   const nav = useNavigate();
 
+  // Cookie
+  const cookie = new Cookies();
+
   var userNow = useContext(User);
-  console.log(userNow);
+  // console.log(userNow);
   async function submit(e) {
     e.preventDefault();
     setAccept(true);
@@ -24,6 +28,9 @@ export default function Login() {
         password: password,
       });
       const token = ress.data.data.token;
+
+      // Sava At Cookie when he Logged in
+      cookie.set("Bearer", token);
       const userDetails = ress.data.data.user;
 
       userNow.setAuth({
@@ -35,7 +42,6 @@ export default function Login() {
     } catch (err) {
       if (err.response.status === 401) {
         setErr(true);
-        console.log(erre);
       }
       setAccept(true);
     }
